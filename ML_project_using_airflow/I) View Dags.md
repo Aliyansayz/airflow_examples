@@ -27,4 +27,7 @@ You can also check particular dag’s information.
 {DAG_ID} is the ID of the DAG.
 {EXECUTION_DATE} is the date and time when the DAG run started.
 
-Python Operator: The PythonOperator is used to execute arbitrary Python functions as tasks within a DAG. It allows you to define a Python function that will be executed when the task runs
+5. Python Operator: The PythonOperator is used to execute arbitrary Python functions as tasks within a DAG. It allows you to define a Python function that will be executed when the task runs
+
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/1dag_info.png)
