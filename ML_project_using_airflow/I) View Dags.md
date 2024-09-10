@@ -31,3 +31,8 @@ You can also check particular dag’s information.
 
 
 ![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/1dag_info.png)
+
+
+* You can also check the particular dags’s variables values which we are passing uing xcom function.
+In below image you can see we are passing values of X_train, y_train , X_test, y_test from train_iris_model_2 to train_iris_model_3
+* The push_value function is defined as the python_callable for the PythonOperator. Inside the function, we set a value of X_train, y_train , X_test, y_test and use xcom_push to store it in XCom with the key.
