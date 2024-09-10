@@ -41,9 +41,6 @@ Prerequisites
 * Machine Learning
 
 
-using Markdown
 
-A) Airflow Server.md
-
-!pandoc *.md > markdown_book.html
+# ___________________________________________________________________________________________________________________________
 
