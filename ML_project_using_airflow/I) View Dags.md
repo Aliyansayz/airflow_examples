@@ -41,6 +41,5 @@ In below image you can see we are passing values of X_train, y_train , X_test, y
 ![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/xcom_info.png)
 
 
--> You can also check the list of jobs from Browse button jobs tab.You can also check the list of jobs from Browse button jobs tab.
-
+-> You can also check the list of jobs from Browse button jobs tab.
 ![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/job_list_dags.png)
