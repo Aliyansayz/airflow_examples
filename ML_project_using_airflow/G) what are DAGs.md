@@ -19,4 +19,6 @@
 * Version control: DAGs can be version controlled like any other code, which allows us to track changes made to workflows over time and easily roll back changes if needed.
 
 
-Overall, DAGs are an essential component of Apache Airflow, and they provide a powerful way to manage complex workflows and automate repetitive tasks.
+* Overall, DAGs are an essential component of Apache Airflow, and they provide a powerful way to manage complex workflows and automate repetitive tasks.
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/dag_image.png)
