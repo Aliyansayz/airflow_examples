@@ -42,6 +42,7 @@ Prerequisites
 
 
 using Markdown
-!Markdown.parse_file(https://github.com/Aliyansayz/airflow_examples/blob/main/ML_project_using_airflow/A)%20Airflow%20Server.md)
+
+![](https://github.com/Aliyansayz/airflow_examples/blob/main/ML_project_using_airflow/A)%20Airflow%20Server.md)
 
 
