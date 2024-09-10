@@ -1,8 +1,8 @@
 # Iris Classification Model with KNN using Apache Airflow
 
 
-* In this guided project, you will delve into the world of machine learning by building an Iris classification model with the k-nearest neighbors (KNN) algorithm, and automating the entire workflow using Apache Airflow. You will start by exploring the Iris dataset, 
-which contains measurements of Iris flowers, and learn to preprocess the data by handling missing values, encoding categorical variables, and splitting the data into training and testing sets. 
+* In this guided project, you will delve into the world of machine learning by building an Iris classification model with the k-nearest neighbors (KNN) algorithm, and automating the entire workflow using Apache Airflow. You will start by exploring the Iris dataset,
+which contains measurements of Iris flowers, and learn to preprocess the data by handling missing values, encoding categorical variables, and splitting the data into training and testing sets.
 
 
 ![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/iris_flower_img.png)
@@ -41,7 +41,10 @@ Prerequisites
 * Machine Learning
 
 
-
+<br />
+<br />
+<br />
+<br />
 # ___________________________________________________________
 
 
@@ -78,7 +81,10 @@ Here are some basics of Apache Airflow:
 
 After clicking the ‘Open Apache Airflow in IDE’ button, You will able to see the below screen
 
-
+<br />
+<br />
+<br />
+<br />
 # ___________________________________________________________
 
 # Connect with Airflow Server Using Id Password
@@ -107,7 +113,10 @@ button : Airflow_server_open
 
   ![](https://github.com/user-attachments/assets/f6ed9b34-6082-4f35-b6c1-9a206d3bb2ed)
 
-
+<br />
+<br />
+<br />
+<br />
 # ___________________________________________________________
 
 
@@ -169,7 +178,10 @@ sudo chown -R 100999 /home/project/airflow/dags
 sudo chmod -R g+rw /home/project/airflow/dags
 
 ```
-
+<br />
+<br />
+<br />
+<br />
 # ___________________________________________________________
 
 
@@ -274,7 +286,10 @@ def train_iris_model_3(**context):
     print(f"Accuracy: {accuracy}")
 
 ```
-
+<br />
+<br />
+<br />
+<br />
 # ___________________________________________________________
 
 
