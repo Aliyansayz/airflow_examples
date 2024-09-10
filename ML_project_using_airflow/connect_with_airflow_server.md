@@ -2,7 +2,7 @@
 
 * After following the steps from the previous page, you will see the following.
 
-![img ] (https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/s3_click_airflow_webserver_copy_id_pass.png)
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/s3_click_airflow_webserver_copy_id_pass.png)
 
 
 
