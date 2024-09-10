@@ -118,7 +118,7 @@ button : Airflow_server_open
 
 
 
-Create Folder structure
+# Create Folder structure
 
 
 ![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/terminal_command.png)
@@ -184,7 +184,7 @@ sudo chmod -R g+rw /home/project/airflow/dags
 <br />
 
 
-Writing Python Code
+# Writing Python Code
 
 In this section,we will show you how to use Python code with Airflow, a powerful workflow management platform. You’ll learn how to create your own Dags (Directed Acyclic Graphs) and perform task monitoring and other operations. By the end, you’ll have the knowledge to effectively utilize Airflow to streamline your workflows and boost productivity.
 
