@@ -43,6 +43,7 @@ Prerequisites
 
 using Markdown
 
-![](https://github.com/Aliyansayz/airflow_examples/blob/main/ML_project_using_airflow/A)%20Airflow%20Server.md)
+A) Airflow Server.md
 
+pandoc *.md > markdown_book.html
 
