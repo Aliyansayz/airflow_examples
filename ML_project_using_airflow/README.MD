@@ -3,6 +3,13 @@
 
 * In this guided project, you will delve into the world of machine learning by building an Iris classification model with the k-nearest neighbors (KNN) algorithm, and automating the entire workflow using Apache Airflow. You will start by exploring the Iris dataset, 
 which contains measurements of Iris flowers, and learn to preprocess the data by handling missing values, encoding categorical variables, and splitting the data into training and testing sets. 
+
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/iris_flower_img.png)
+
+
+
+
 * You will then implement the KNN algorithm, configure its parameters, and use the training data to train the model. You will evaluate the performance of the model using various metrics, such as accuracy, precision, recall, and F1-score, and fine-tune the model for optimal results.
 
 * Next, you will leverage the power of Apache Airflow to automate the entire workflow of building and deploying the Iris classification model. You will define and manage the workflow tasks in Apache Airflow using Directed Acyclic Graphs (DAGs), set up dependencies, and schedule the tasks. 
