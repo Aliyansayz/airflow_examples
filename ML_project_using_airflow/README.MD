@@ -316,6 +316,8 @@ It will Automatically sync to the DAGs which are created by Python file.
 <br />
 <br />
 
+___________________________________________________________
+
 # What Are DAGs (Directed Acyclic Graphs), and Why Do We Generate Them?
 
 * DAGs (Directed Acyclic Graphs) are used in Apache Airflow to represent workflows. DAGs are a collection of tasks with dependencies between them, and each task represents a specific action that needs to be executed as part of the workflow.
