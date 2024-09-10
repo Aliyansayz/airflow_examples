@@ -19,3 +19,8 @@ button : Airflow_server_open
 * Just login and After logging in, start your journey to learn airflow.
   
 ![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/s4_login_id_pass.png)
+
+* Open Airflow Server
+
+  ![](https://github.com/user-attachments/assets/f6ed9b34-6082-4f35-b6c1-9a206d3bb2ed)
+
