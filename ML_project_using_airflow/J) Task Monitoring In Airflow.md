@@ -20,16 +20,16 @@ You can also monitor task instance.
 
 ![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/task_inst_info.png)
 
-** In Apache Airflow, a task instance represents a specific instance of a task that is executed as part of a workflow. 
+* In Apache Airflow, a task instance represents a specific instance of a task that is executed as part of a workflow. 
 A task instance is created when a task is scheduled to run and contains information such as the task ID, 
 the execution date, the task state (e.g. running, success, or failure), and any parameters or inputs required for the task.
 
-** When a task is executed, Airflow creates a new task instance for that execution. 
+* When a task is executed, Airflow creates a new task instance for that execution. 
 Each task instance is associated with a unique execution date, allowing multiple instances of the same 
 task to be run at different times.
 
-** Task instances also provide visibility into the status of each task and allow teams to monitor the progress of workflows. 
+* Task instances also provide visibility into the status of each task and allow teams to monitor the progress of workflows. 
 Teams can use the Airflow web UI to view the state of each task instance, check for errors, and troubleshoot issues.
 
-** Overall, task instances are a critical component of Airflow’s workflow management system, 
+* Overall, task instances are a critical component of Airflow’s workflow management system, 
 providing the information and tracking necessary to ensure that tasks are executed correctly and efficiently.
