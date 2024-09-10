@@ -46,8 +46,6 @@ Prerequisites
 <br />
 <br />
 
-# ___________________________________________________________
-
 
 # Airflow Server
 
@@ -87,8 +85,6 @@ After clicking the ‘Open Apache Airflow in IDE’ button, You will able to see
 <br />
 <br />
 
-# ___________________________________________________________
-
 # Connect with Airflow Server Using Id Password
 
 * After following the steps from the previous page, you will see the following.
@@ -120,7 +116,6 @@ button : Airflow_server_open
 <br />
 <br />
 
-# ___________________________________________________________
 
 
 Create Folder structure
@@ -150,8 +145,6 @@ mkdir dags
 <br />
 <br />
 <br />
-
-# ___________________________________________________________
 
 
 Create Python file
@@ -189,8 +182,6 @@ sudo chmod -R g+rw /home/project/airflow/dags
 <br />
 <br />
 <br />
-
-# ___________________________________________________________
 
 
 Writing Python Code
@@ -298,8 +289,6 @@ def train_iris_model_3(**context):
 <br />
 <br />
 <br />
-
-# ___________________________________________________________
 
 
 # Define the Dags
