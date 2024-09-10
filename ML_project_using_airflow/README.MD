@@ -43,3 +43,271 @@ Prerequisites
 
 
 # ___________________________________________________________
+
+
+# Airflow Server
+
+* Open Airflow Server
+
+Click on the below button to start apache airflow.
+
+What is Apache Airflow.?
+
+* Apache Airflow is an open-source platform used to programmatically author, schedule, and monitor workflows. It was originally created by Airbnb and is now maintained by the Apache Software Foundation.
+
+Here are some basics of Apache Airflow:
+
+*  DAGs (Directed Acyclic Graphs): Airflow uses DAGs to represent workflows.
+*  A DAG is a collection of tasks with dependencies between them. The tasks in a DAG are executed in a specific order.
+
+* Operators: Operators are the building blocks of tasks in Airflow. An operator is a Python class that defines a single task in a DAG. Airflow provides many built-in operators such as BashOperator, PythonOperator, and more.
+* Sensors: Sensors are special types of operators that wait for some external event or condition to occur before they execute their task.
+
+* Executors: Executors are responsible for executing tasks. Airflow supports several executors such as LocalExecutor, SequentialExecutor, and CeleryExecutor.
+
+* Connections: Connections are used to store the information required to connect to external systems such as databases, APIs, and more.
+
+* Variables: Variables are used to store key-value pairs that can be accessed from within a DAG.
+
+* Web UI: Airflow provides a web-based user interface that allows you to view and manage your DAGs, tasks, and logs.
+
+* CLI: Airflow provides a command-line interface (CLI) that allows you to interact with Airflow from the terminal.
+
+
+### Overall, Airflow is a powerful tool for creating, scheduling, and monitoring workflows. It provides a flexible and scalable platform for building data pipelines and automating complex workflows.
+
+After clicking the ‘Open Apache Airflow in IDE’ button, You will able to see the below screen
+
+
+# ___________________________________________________________
+
+# Connect with Airflow Server Using Id Password
+
+* After following the steps from the previous page, you will see the following.
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/s3_click_airflow_webserver_copy_id_pass.png)
+
+
+
+* You will be able to see status in blue button. In above image you can see it’s stop status.
+
+
+* After getting starting status of apache airflow click on the below button to start the application for log in into airflow.
+
+button : Airflow_server_open
+
+
+* Log in by copying the user ID and password from the last window
+
+* Just login and After logging in, start your journey to learn airflow.
+  
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/s4_login_id_pass.png)
+
+* Open Airflow Server
+
+  ![](https://github.com/user-attachments/assets/f6ed9b34-6082-4f35-b6c1-9a206d3bb2ed)
+
+
+# ___________________________________________________________
+
+
+Create Folder structure
+
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/terminal_command.png)
+
+
+
+terminal_command
+
+Run the following commands in your terminal to create a folder for your Airflow DAGs (i.e. your project).
+
+
+```
+mkdir airflow
+```
+
+```
+cd airflow
+```
+
+```
+mkdir dags
+```
+
+# ___________________________________________________________
+
+
+Create Python file
+
+Create a new Python file named iris_classification.py and save it into your dags folder by typing the following commands
+
+```
+    cd dags
+```
+
+```
+    touch iris_classification.py
+```
+
+Click on the below button to create a Python file.
+
+button open iris_classification.py
+
+Note: Click on the create the file button.
+
+create_file_permission
+
+You can also create a new file using the file menu.
+Note: Make sure you create file iris_classification.py in dags folder.
+
+
+Note: IIf you are having trouble creating a Python file, you can also use the code below:
+
+```
+sudo chown -R 100999 /home/project/airflow/dags
+sudo chmod -R g+rw /home/project/airflow/dags
+
+```
+
+# ___________________________________________________________
+
+
+Writing Python Code
+
+In this section,we will show you how to use Python code with Airflow, a powerful workflow management platform. You’ll learn how to create your own Dags (Directed Acyclic Graphs) and perform task monitoring and other operations. By the end, you’ll have the knowledge to effectively utilize Airflow to streamline your workflows and boost productivity.
+
+Write a below code into that file `iris_classification.py`
+
+
+Importing required libraries:-
+  ```python
+  from datetime import datetime
+  from airflow import DAG
+  from airflow.operators.python_operator import PythonOperator
+  import pandas as pd
+  import math
+  import numpy as np
+  ```
+
+Create a function for reading csv file using pandas
+Note: The xcom_push function is used in Apache Airflow to push a value to XCom, 
+which is a feature that allows data sharing between tasks in a workflow. 
+The xcom_push function is called on the task instance (context[‘ti’]) to store a 
+value with a specified key in the XCom storage.
+
+```python
+def train_iris_model_1(**context):
+    # Your code for training and evaluating the Iris model with KNN algorithm (DAG 1)
+    iris_data = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data', header=None, names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
+    iris_data['class'] = iris_data['class'].astype('category').cat.codes
+    # convert into Dictionary for passing into another function using xcom_push method
+    df_dict = iris_data.to_dict(orient='records')
+    # Push this df_dict as an iris using xcom_push method to access in train_iris_model2 function
+    context['ti'].xcom_push(key='iris', value=df_dict)
+    pass
+```
+
+* Create a function for splitting a dataframe into traning data and test data
+
+``` python
+def train_iris_model_2(**context):
+    # Your code for training and evaluating the Iris model with KNN algorithm (DAG 2)
+    # xcom_pull will help you to get df_dict variable from train_iris_model_1 function
+    iris_dict = context['ti'].xcom_pull(key='iris')
+    iris_data= pd.DataFrame(iris_dict)
+    # Split train test data
+    X = iris_data.iloc[:, :-1].values
+    y = iris_data.iloc[:, -1].values
+    split = int(0.8 * len(iris_data))
+    X_train, y_train = X[:split], y[:split]
+    X_test, y_test = X[split:], y[split:]
+    # Convert into list
+    X_train=X_train.tolist()
+    y_train=y_train.tolist()
+    X_test=X_test.tolist()
+    y_test=y_test.tolist()
+    # convert into Dictionary for passing into another function using xcom_push method
+    X_train={'X_train': X_train}
+    y_train={'y_train': y_train}
+    X_test={'X_test': X_test}
+    y_test={'y_test': y_test}
+    # Push variables using xcom_push method to access in train_iris_model_3 function
+    context['ti'].xcom_push(key='X_train', value=X_train)
+    context['ti'].xcom_push(key='y_train', value=y_train)
+    context['ti'].xcom_push(key='X_test', value=X_test)
+    context['ti'].xcom_push(key='y_test', value=y_test)
+    pass
+
+```
+
+* Build a KNN classification model and Calculate accuracy
+
+```python
+
+def train_iris_model_3(**context):
+    # Your code for training and evaluating the Iris model with KNN algorithm (DAG 3)
+    X_train = context['ti'].xcom_pull(key='X_train')
+    y_train = context['ti'].xcom_pull(key='y_train')
+    X_test = context['ti'].xcom_pull(key='X_test')
+    y_test = context['ti'].xcom_pull(key='y_test')
+    # Convert Dict into numpy array to apply KNN Algorithm
+    X_train = np.array(X_train['X_train'])
+    y_train = np.array(y_train['y_train'])
+    X_test = np.array(X_test['X_test'])
+    y_test = np.array(y_test['y_test'])
+    predictions = []
+    # KNN Algorithm
+    for i in range(len(X_test)):
+        distances = []
+        for j in range(len(X_train)):
+            dist = math.sqrt(sum([(a - b)**2 for a, b in zip(X_test[i], X_train[j])]))
+            distances.append((dist, y_train[j]))
+        distances.sort(key=lambda x: x[0])
+        neighbors = distances[:3]
+        classes = [neighbor[1] for neighbor in neighbors]
+        # Predict Classes
+        prediction = max(set(classes), key=classes.count)
+        predictions.append(prediction)
+    # Calculate the Accuracy
+    accuracy = sum([1 for i in range(len(y_test)) if y_test[i] == predictions[i]]) / float(len(y_test))
+    print(f"Accuracy: {accuracy}")
+
+```
+
+# ___________________________________________________________
+
+
+# Define the Dags
+
+
+```python
+
+  default_args = {
+    'owner': 'airflow',
+    'start_date': datetime(2023, 5, 22),
+}
+# Here we have created 1 main tag iris_classification_models and 3 tasks
+with DAG('iris_classification_models', default_args=default_args, schedule_interval=None) as dag:
+    iris_classification_model_1 = PythonOperator(
+        task_id='train_iris_classification_model_1',
+        python_callable=train_iris_model_1,
+    )
+    iris_classification_model_2 = PythonOperator(
+        task_id='train_iris_classification_model_2',
+        python_callable=train_iris_model_2,
+    )
+    iris_classification_model_3 = PythonOperator(
+        task_id='train_iris_classification_model_3',
+        python_callable=train_iris_model_3,
+    )
+    iris_classification_model_1 >> iris_classification_model_2 >> iris_classification_model_3
+
+```
+
+
+Now go to Airflow Webserver and serach for `iris_classification_models` in dag search 
+It will Automatically sync to the DAGs which are created by Python file.
+
+![](https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IND-GPXX0DNQEN/images/find_dag.png)
+
