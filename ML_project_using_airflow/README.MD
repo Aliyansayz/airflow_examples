@@ -45,6 +45,7 @@ Prerequisites
 <br />
 <br />
 <br />
+
 # ___________________________________________________________
 
 
@@ -85,6 +86,7 @@ After clicking the ‘Open Apache Airflow in IDE’ button, You will able to see
 <br />
 <br />
 <br />
+
 # ___________________________________________________________
 
 # Connect with Airflow Server Using Id Password
@@ -117,6 +119,7 @@ button : Airflow_server_open
 <br />
 <br />
 <br />
+
 # ___________________________________________________________
 
 
@@ -143,6 +146,10 @@ cd airflow
 ```
 mkdir dags
 ```
+<br />
+<br />
+<br />
+<br />
 
 # ___________________________________________________________
 
@@ -182,6 +189,7 @@ sudo chmod -R g+rw /home/project/airflow/dags
 <br />
 <br />
 <br />
+
 # ___________________________________________________________
 
 
@@ -290,6 +298,7 @@ def train_iris_model_3(**context):
 <br />
 <br />
 <br />
+
 # ___________________________________________________________
 
 
